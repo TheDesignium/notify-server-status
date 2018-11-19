@@ -1,4 +1,4 @@
-https://travis-ci.org/TheDes[![Build Status](https://travis-ci.org/TheDesignium/notify-server-status.svg?branch=master)](https://travis-ci.org/TheDesignium/notify-server-status)ignium/notify-server-status.svg?branch=master
+[![Build Status](https://travis-ci.org/TheDesignium/notify-server-status.svg?branch=master)](https://travis-ci.org/TheDesignium/notify-server-status)
 
 # できること
 
