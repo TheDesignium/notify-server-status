@@ -1,0 +1,21 @@
+# .editorconfigが設置されている階層以下にルールを適用
+root = true
+
+# すべてのファイルに適用
+[*]
+# 改行コード指定: LF
+end_of_line = lf
+# 行末スペースを削除: 有
+trim_trailing_whitespace = true
+# ファイル末尾の改行: 有
+insert_final_newline = true
+# インデントスタイル: Tab
+indent_style = tab
+# インデント幅: 4
+indent_size = 4
+# すべてのファイルに適用
+[*]
+# 文字エンコーディングの定義
+charset = utf-8
+# 改行コード指定: LF
+end_of_line = lf
