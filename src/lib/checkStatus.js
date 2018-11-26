@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 
 class checkStatus {
 	static async getStatusCode(url) {
+		console.log(fetch);
 		const res = await fetch(url)
 		.catch(err => {
 			console.log(err);
