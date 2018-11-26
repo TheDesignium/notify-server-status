@@ -2,17 +2,56 @@
 
 const checkStatus = require('../lib/checkStatus');
 const postToSlack = require('../lib/postToSlack');
+const fetchMock = require('fetch-mock');
+const proxyquire = require('proxyquire');
+// const makeRequest = require('../mock/makeRequest');
 
-const correctSlackOptions = {
-	url: 'your webhook url',
+const correctURL = 'https://hooks.slack.com/services/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';
+const wrongURL = 'https://hooks.slack.com/services/wrongId';
+
+const baseOptions = {
+	url: '',
 	channel: 'bot',
 	username: 'serverStatusNotifier'
 };
-const wrongSlackOptions = {
-	url: 'https://hooks.slack.com/services/wrongId',
-	channel: 'bot',
-	username: 'serverStatusNotifier'
-};
+
+describe('fetch-mock test', () => {
+	it('check fetch mock test', async () => {
+		/*
+		const myMock = fetchMock.sandbox().mock('*', 200, {
+			res: 'success'
+		});
+
+		const makeRequest = proxyquire('../mock/makeRequest', {
+		  'node-fetch': myMock
+		});
+		*/
+
+		var myMock = fetchMock.sandbox().mock('*',{hello: 'world'});
+		var makeRequest = proxyquire('../mock/makeRequest', {'test': 'b'})
+		// var makeRequest = proxyquire('../mock/makeRequest',{
+		//   'node-fetch': 'hello'
+		// });
+
+		makeRequest().then(function(data) {
+		  console.log('got data', data);
+		}).catch((e) => { console.log(e.message)});
+
+		/*
+		const res = await makeRequest();
+		console.log(res);
+		console.log(res.status);
+		*/
+	});
+});
+
+/*
+describe('makeRequest', () => {
+	it('check makeRequest', async () => {
+		await makeRequest();
+	});
+});
+*/
 
 describe('checkStatus', () => {
 	describe('getStatusCode()', () => {
@@ -37,10 +76,14 @@ describe('checkStatus', () => {
 describe('postToSlack', () => {
 	describe('post', () => {
 		it('postToSlack(correctSlackOptions, "test") to be success', async () => {
-			expect(await postToSlack.post(correctSlackOptions, 'test')).toBe('success');
+			const options = baseOptions;
+			options.url = correctURL;
+			expect(await postToSlack.post(options, 'test')).toBe('success');
 		});
 		it('postToSlack(wrongSlackOptions, "test") to be error', async () => {
-			expect(await postToSlack.post(wrongSlackOptions, 'test')).toBe('success');
+			const options = baseOptions;
+			options.url = wrongURL;
+			expect(await postToSlack.post(options, 'test')).toBe('success');
 		});
 	});
 });

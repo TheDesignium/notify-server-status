@@ -3,7 +3,7 @@
 const notifyServerStatus = require('../index');
 
 const correctSlackOptions = {
-	url: 'your webhook url',
+	url: 'https://hooks.slack.com/services/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',
 	channel: 'bot',
 	username: 'serverStatusNotifier'
 };
