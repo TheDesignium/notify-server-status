@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "1. 外部サーバの死活監視 1.1. ステータスコード 1.2. レスポンスタイム 2. Slackへの通知",
   "main": "index.js",
+  "config": {
+	"webhookID": "your webhook id"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "webhookID=$npm_package_config_webhookID jest"
   },
   "repository": {
     "type": "git",

@@ -7,7 +7,6 @@ class checkStatus {
 	static async getStatusCode(url) {
 		const res = await fetch(url)
 		.catch(err => {
-			console.log(err);
 			return err;
 		});
 

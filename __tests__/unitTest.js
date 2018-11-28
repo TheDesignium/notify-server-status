@@ -1,9 +1,9 @@
 'use strict'
 
-const notifyServerStatus = require('../index');
+const notifyServerStatus = require('../src/index');
 
 const correctSlackOptions = {
-	url: 'your webhook url',
+	url: 'https://hooks.slack.com/services/' + process.env.webhookID,
 	channel: 'bot',
 	username: 'serverStatusNotifier'
 };
