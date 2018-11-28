@@ -1,6 +1,6 @@
 {
   "name": "notify-server-status",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "1. 外部サーバの死活監視 1.1. ステータスコード 1.2. レスポンスタイム 2. Slackへの通知",
   "main": "index.js",
   "config": {
@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/TheDesignium/notify-server-status.git"
   },
-  "author": "ketch",
-  "license": "ISC",
+  "author": "ketch123",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TheDesignium/notify-server-status/issues"
   },
