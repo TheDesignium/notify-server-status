@@ -10,6 +10,7 @@ const correctSlackOptions = {
 const options = {
 	url: 'http://example.com',
 	expectedCode: 200,
+	timeout: 1000,
 	ok_text: 'server is running',
 	ng_text: 'server is sick',
 	slackOptions: correctSlackOptions

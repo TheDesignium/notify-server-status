@@ -3,9 +3,12 @@
 const fetch = require('node-fetch');
 
 class checkStatus {
-	// TODO: 指定されたurlへリクエストを送るメソッド fin?
-	static async getStatusCode(url) {
-		const res = await fetch(url)
+	static async getStatusCode(url, timeout) {
+		const options = {
+			timeout: timeout
+		};
+
+		const res = await fetch(url, options)
 		.catch(err => {
 			return err;
 		});
@@ -13,7 +16,6 @@ class checkStatus {
 		return res.status;
 	}
 
-	// TODO: ステータスコードを確認するメソッド
 	// TODO: 2XXのように先頭番号のみを指定したときもマッチングできるようにする
 	static async checkStatusCode(statusCode, expectedCode) {
 		const asExpected = statusCode === expectedCode ? true : false;

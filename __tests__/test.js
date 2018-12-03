@@ -1,6 +1,5 @@
 'use strict'
 
-
 const checkStatus = require('../src/lib/checkStatus');
 const postToSlack = require('../src/lib/postToSlack');
 
