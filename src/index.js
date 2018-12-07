@@ -3,7 +3,19 @@
 const checkStatus = require('./lib/checkStatus');
 const postToSlack = require('./lib/postToSlack');
 
-const notifyServerStatus = async options => {
+const notifyServerStatus = async requestOptions => {
+	if(requestOptions.url === undefined) {
+		throw new Error('url does not exist');
+	}
+	const options = {
+		url: requestOptions.url,
+		expectedCode: requestOptions.expectedCode !== undefined ? requestOptions.expectedCode : 200,
+		timeout: requestOptions.timeout !== undefined ? requestOptions.timeout : 300,
+		ok_text: requestOptions.ok_text,
+		ng_text: requestOptions.ng_text !== undefined ? requestOptions.ng_text : 'server is sick',
+		slackOptions: requestOptions.slackOptions
+	};
+
 	const statusCode = await checkStatus.getStatusCode(options.url, options.timeout)
 	.catch(err => {
 		throw new Error(err);
