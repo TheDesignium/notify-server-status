@@ -19,7 +19,7 @@ const options = {
 describe('unit test', () => {
 	describe('notifyServerStatus', () => {
 		it('notifyServerStatus to be success', async () => {
-			expect(await notifyServerStatus(options)).toBe('success');
+			expect(await notifyServerStatus.checkByGetReq(options)).toBe('success');
 		});
 	});
 });
