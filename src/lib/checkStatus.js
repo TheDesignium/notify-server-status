@@ -21,6 +21,23 @@ class checkStatus {
 		const asExpected = statusCode === expectedCode ? true : false;
 		return asExpected;
 	}
+
+	static async postRequest(url, body, timeout){
+		const options = {
+			method: 'POST',
+			body: JSON.stringify(body),
+			headers: {
+				'Content-Type':'application/json'
+			}
+		};
+
+		const res = await fetch(url, options)
+		.catch(err => {
+			return err;
+		});
+
+		return res.status
+	}
 }
 
 module.exports = checkStatus;
