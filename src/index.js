@@ -31,7 +31,7 @@ const notifyServerStatus = async requestOptions => {
 	return res;
 }
 
-const checkByPostReqq = async requestOptions => {
+const checkByPostReq = async requestOptions => {
 	if(requestOptions.url === undefined) {
 		throw new Error('url does not exist');
 	}
