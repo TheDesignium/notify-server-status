@@ -64,3 +64,4 @@ const checkByPostReq = async requestOptions => {
 }
 
 module.exports = notifyServerStatus;
+module.exports = checkByPostReq;

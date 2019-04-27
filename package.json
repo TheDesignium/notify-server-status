@@ -1,6 +1,6 @@
 {
   "name": "notify-server-status",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "1. 外部サーバの死活監視 1.1. ステータスコード 1.2. レスポンスタイム 2. Slackへの通知",
   "main": "src/index.js",
   "config": {
