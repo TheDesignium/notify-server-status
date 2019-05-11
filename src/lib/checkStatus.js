@@ -28,7 +28,8 @@ class checkStatus {
 			body: JSON.stringify(body),
 			headers: {
 				'Content-Type':'application/json'
-			}
+			},
+			timeout: timeout
 		};
 
 		const res = await fetch(url, options)
