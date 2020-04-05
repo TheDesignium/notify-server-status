@@ -29,7 +29,7 @@ const postOptions = {
 };
 
 
-describe('unit test', () => {
+describe('e2e test', () => {
 	describe('notifyServerStatus', () => {
 		it('checkByGetReq to be success', async () => {
 			expect(await notifyServerStatus.checkByGetReq(getOptions)).toBe('success');
