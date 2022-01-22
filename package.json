@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/TheDesignium/notify-server-status#readme",
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^3.1.1"
   },
   "devDependencies": {
     "jest": "^23.6.0"
